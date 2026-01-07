@@ -41,4 +41,22 @@ The frontend is built with a modern JS framework (e.g., Vite + React) for a smoo
 ## 📁 Project Structure
 
 Below is the typical directory layout of this repo:
+```
+phishing-detection/
+├── src/ # Frontend source code
+│ ├── components/ # UI components (buttons, form, cards)
+│ ├── styles/ # CSS or Tailwind files
+│ ├── App.tsx
+│ ├── main.tsx
+├── backend/ # Backend server code (if present)
+│ ├── model/ # Saved ML model + preprocessing logic
+│ ├── api.py # API endpoints for prediction
+├── .gitignore
+├── README.md
+├── package.json
+├── vite.config.ts
+├── requirements.txt (Python) # Backend Python deps
+├── Procfile # Deployment file (Heroku/Render)
+└── index.html
+```
 
