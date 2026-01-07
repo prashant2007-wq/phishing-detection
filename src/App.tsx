@@ -18,7 +18,7 @@ export interface DetectionResult {
     subdomainCount: number;
     httpsUsed: boolean;
   };
-}
+} 
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
