@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Home } from './components/Home';
 import { Results } from './components/Results';
 import { About } from './components/About';
-import { HowItWorks } from './components/HowItWorks';
+import { HowItWorks } from './components/HowItWorks'; 
 import { AnimatedBackground } from './components/AnimatedBackground';
 
 export type Page = 'home' | 'results' | 'about' | 'how-it-works';
