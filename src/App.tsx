@@ -4,9 +4,7 @@ import { Results } from './components/Results';
 import { About } from './components/About';
 import { HowItWorks } from './components/HowItWorks'; 
 import { AnimatedBackground } from './components/AnimatedBackground';
-
 export type Page = 'home' | 'results' | 'about' | 'how-it-works';
-
 export interface DetectionResult {
   url: string;
   isPhishing: boolean;
@@ -19,17 +17,14 @@ export interface DetectionResult {
     httpsUsed: boolean;
   };
 } 
-
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const [detectionResult, setDetectionResult] = useState<DetectionResult | null>(null);
-
-  const handleScan = (url: string) => {
-    // Mock detection logic (replace with actual API call)
+  const handleScan = (url: string) => {  
     const mockResult: DetectionResult = {
       url,
       isPhishing: Math.random() > 0.5,
-      confidence: Math.random() * 40 + 60, // 60-100%
+      confidence: Math.random() * 40 + 60, 
       features: {
         urlLength: url.length,
         hasIP: /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(url),
