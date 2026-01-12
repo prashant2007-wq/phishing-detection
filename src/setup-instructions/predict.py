@@ -12,7 +12,6 @@ except Exception as e:
 def extract_features(url):
     """
     Extract features from URL for prediction
-    
     Returns:
         dict: Dictionary containing all extracted features
     """
