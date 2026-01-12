@@ -22,7 +22,7 @@ export default function App() {
   const [detectionResult, setDetectionResult] = useState<DetectionResult | null>(null);
   const handleScan = (url: string) => {  
     const mockResult: DetectionResult = {
-      url,
+      url, 
       isPhishing: Math.random() > 0.5,
       confidence: Math.random() * 40 + 60, 
       features: {
