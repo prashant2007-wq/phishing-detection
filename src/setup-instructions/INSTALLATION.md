@@ -17,7 +17,7 @@ Reorganize your existing project like this:
 
 ```
 phishing-detection/
-├── backend/                    # Move all existing Flask files here
+├── backend/                    
 │   ├── data/
 │   │   ├── phishing_urls.csv
 │   │   └── clean_data.py
@@ -25,11 +25,11 @@ phishing-detection/
 │   │   ├── train_model.py
 │   │   ├── feature_extraction.py
 │   │   └── phishing_model.pkl
-│   ├── app.py                  # Updated Flask app (see below)
-│   ├── predict.py              # Prediction logic (see below)
-│   └── requirements.txt        # Python dependencies
+│   ├── app.py                  
+│   ├── predict.py             
+│   └── requirements.txt       
 │
-└── frontend/                   # New React frontend
+└── frontend/                   
     ├── src/
     │   ├── components/
     │   │   ├── AnimatedBackground.tsx
