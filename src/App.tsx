@@ -37,7 +37,6 @@ export default function App() {
     setDetectionResult(mockResult);
     setCurrentPage('results');
   };
-
   return (
     <div className="min-h-screen relative overflow-hidden">
       <AnimatedBackground />
