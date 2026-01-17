@@ -9,6 +9,17 @@ try:
 except Exception as e:
     print(f"Error loading model: {e}")
     model = None
+def count_special_characters(url):
+    """
+    Calculates the number of special characters in a given URL.
+    Returns the count as a numerical feature.
+    """
+    special_chars = {'@', '?', '-', '=', '.', '#', '%', '+', '$', '!', '*', ',', ';', '_', '&'}
+    count = 0
+    for char in url:
+        if char in special_chars:
+            count += 1
+    return count
 def extract_features(url):
     """
     Extract features from URL for prediction
@@ -59,6 +70,7 @@ def extract_features(url):
     features['has_hyphen'] = '-' in url
     
     # Add more features based on your model's requirements
+    features['special_char_count'] = count_special_characters(url)
     
     return features
 
@@ -97,6 +109,7 @@ def predict_url(url):
     # Extract features
     features = extract_features(url)
     
+    
     if model is None:
         # Fallback to rule-based prediction if model not loaded
         return rule_based_prediction(url, features)
@@ -130,7 +143,8 @@ def predict_url(url):
                 'hasSuspiciousKeywords': features['has_suspicious_keywords'],
                 'domainLength': features['domain_length'],
                 'hasNumbersInDomain': features['has_numbers_in_domain'],
-                'hasHyphen': features['has_hyphen']
+                'hasHyphen': features['has_hyphen'],
+                'specialCharCount': features['special_char_count']
             }
         }
         
@@ -176,6 +190,7 @@ def rule_based_prediction(url, features):
             'hasSuspiciousKeywords': features['has_suspicious_keywords'],
             'domainLength': features['domain_length'],
             'hasNumbersInDomain': features['has_numbers_in_domain'],
-            'hasHyphen': features['has_hyphen']
+            'hasHyphen': features['has_hyphen'],
+            'specialCharCount': features['special_char_count']  
         }
     }
